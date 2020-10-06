@@ -1,4 +1,5 @@
-Variable Rate Calculator
+#Variable Rate Calculator
+
 Most Adjustable / Variable rate loans based on benchmark interest rate indexes plus credit organizations rate margin.
 
 LIBOR (London Inter-bank Offered Rate) is benchmark interest rate index most commonly used by credit organizations to adjust interest rate on variable rate loans.
