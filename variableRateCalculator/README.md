@@ -1,4 +1,4 @@
-#Variable Rate Calculator
+# Variable Rate Calculator
 
 Most Adjustable / Variable rate loans based on benchmark interest rate indexes plus credit organizations rate margin.
 
