@@ -19,16 +19,33 @@ public class SearchWords {
 
 		System.out.println("======================");
 		System.out.println("   Search A Word In The File");
-		System.out.println("======================");
+		System.out.println("======================\n");
 
 		File file = verifiedInputFile();
 		String word = textInput();
 		boolean caseSensitive = caseSensitive();
 		wordSearch(file, word, caseSensitive);
+		int option = 0;
+		while (option != 3) {
+			option = optionsMenu();
+			if (option == 1) {
+				word = textInput();
+				caseSensitive = caseSensitive();
+				wordSearch(file, word, caseSensitive);
+			}
+			if (option == 2) {
+				file = verifiedInputFile();
+				word = textInput();
+				caseSensitive = caseSensitive();
+				wordSearch(file, word, caseSensitive);
+			}
+		}
+		input.close(); // closing scanner in last method that uses it
+		System.exit(0);
 
 	}
 
-	public static void wordSearch(File InputFile, String searchWord, boolean caseSensitive)
+	private static void wordSearch(File InputFile, String searchWord, boolean caseSensitive)
 			throws FileNotFoundException {
 
 		File inputFile = InputFile;
@@ -57,7 +74,7 @@ public class SearchWords {
 		}
 	}
 
-	public static File fileInput() {
+	private static File fileInput() {
 		System.out.print("Name / Locate the file that should be searched? >>> ");
 
 		String filePath = input.nextLine();
@@ -66,7 +83,7 @@ public class SearchWords {
 
 	}
 
-	public static File verifiedInputFile() {
+	private static File verifiedInputFile() {
 
 		File temp = fileInput();
 		// checks if file valid or exists
@@ -86,7 +103,7 @@ public class SearchWords {
 
 	}
 
-	public static String textInput() {
+	private static String textInput() {
 		System.out.print("Type a word / phase part of the word to search >>> ");
 		String lookWord = input.nextLine();
 
@@ -94,7 +111,7 @@ public class SearchWords {
 
 	}
 
-	public static boolean caseSensitive() {
+	private static boolean caseSensitive() {
 		System.out.println("Should the search be case sensitive? (Y\\N)");
 		String caseInput = input.nextLine().toUpperCase();
 
@@ -104,9 +121,26 @@ public class SearchWords {
 			caseInput = input.nextLine().toUpperCase(); // if not Y or N prompts new entry
 
 		}
-		input.close(); // closing scanner in last method that uses it
+
 		return caseInput.equals("Y");
 
+	}
+
+	private static int optionsMenu() {
+		System.out.println("\n=====================\n" + "Choose options to continue:\n" + "1 - New word search\n"
+				+ "2 - Search in new file\n" + "3 - Quit");
+		String userInput = "";
+		boolean valid = false;
+		while (!valid) {
+			userInput = input.nextLine();
+			if (userInput.equals("1") || userInput.equals("2") || userInput.equals("3")) {
+				valid = true;
+			} else {
+				System.out.println("Not valid option, Please choose 1,2 or 3:");
+			}
+		}
+
+		return Integer.parseInt(userInput);
 	}
 
 }
