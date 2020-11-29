@@ -1,7 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: m02-capstone-server-final
+Implementation-Title: demo
 Implementation-Version: 0.0.1-SNAPSHOT
-Build-Jdk-Spec: 1.8
+Built-By: student
+Implementation-Vendor-Id: side.projects
+Build-Jdk: 1.8.0_231
+Implementation-URL: http://projects.spring.io/spring-boot/image/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
 

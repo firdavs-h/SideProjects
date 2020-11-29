@@ -2,11 +2,11 @@
 ...ongoing project...\
 Apply effects to uploaded image.\
 Image effect codes used from [GeeksForGeeks](https://www.geeksforgeeks.org/image-processing-java-set-1-read-write/?ref=lbp)
-## Grey
-![Grey](Outgrey.jpg)
+## Grayscale
+![Gray](img/grayscale.jpg)
 ## Sepia
-![Sepia](Out.jpg)
+![Sepia](img/sepia.jpg)
 ## Negative
-![Negative](negative.jpg)
+![Negative](img/negative.jpg)
 ## Watermark
-![Watermark](output.jpg)
+![Watermark](img/watermark.jpg)

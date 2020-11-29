@@ -1,4 +1,4 @@
-package side.projects.images;
+package side.projects.images.app;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,11 +8,11 @@ import javax.imageio.ImageIO;
 import org.springframework.stereotype.Component;
 
 
+@Component
 public class Grayscale {
-	private File f;
+
 	private BufferedImage img;
-
-
+	File f;
 
 	public File applyEffect(File file) {
 
@@ -52,12 +52,11 @@ public class Grayscale {
 
 		// write image
 		try {
-			f = new File("Outgrey.jpg");
+		
 			ImageIO.write(img, "jpg", f);
 		} catch (IOException e) {
 			System.out.println(e);
 		}
 		return f;
 	}
-
 }

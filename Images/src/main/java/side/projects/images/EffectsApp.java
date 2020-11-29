@@ -1,4 +1,4 @@
-package side.projects.images.app;
+package side.projects.images;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
