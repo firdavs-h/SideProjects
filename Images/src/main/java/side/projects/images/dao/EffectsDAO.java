@@ -10,5 +10,6 @@ public interface EffectsDAO {
 	File negative(MultipartFile file);
 	File sepia(MultipartFile file);
 	File waterMark(MultipartFile file, String str);
+	File noSelection(MultipartFile file);
 	
 }

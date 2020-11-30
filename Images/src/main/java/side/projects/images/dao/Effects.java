@@ -78,6 +78,18 @@ public class Effects implements EffectsDAO {
 		return temp;
 	}
 	
+	@Override
+	public File noSelection(MultipartFile file) {
+		File f = null;
+		try {
+			f= convert(file);
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		return f;
+	}
+	
 	
 
 	private  File convert(MultipartFile file) throws IOException {

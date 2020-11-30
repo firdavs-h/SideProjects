@@ -7,12 +7,16 @@ import java.io.InputStream;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import side.projects.images.dao.EffectsDAO;
+
+@CrossOrigin(origins = { "http://localhost:5502", "http://127.0.0.1:5502" })
 
 @RestController
 public class EffectsController {
@@ -27,9 +31,11 @@ public class EffectsController {
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 
-	public ResponseEntity<byte[]> greyscale(@RequestParam("file") MultipartFile file, @RequestParam("type") String type, 
-			@RequestParam("watermark") String str) throws IOException {
-		
+	public ResponseEntity<byte[]> greyscale(@RequestParam("file") MultipartFile file,
+			@RequestParam(value = "effect-type", defaultValue = "") String type,
+			@RequestParam(value = "watermark", defaultValue = "no text provided", required = false) String str)
+			throws IOException {
+
 		switch (type) {
 		case "grayscale":
 			temp = effectsDAO.greyscale(file);
@@ -44,8 +50,8 @@ public class EffectsController {
 			temp = effectsDAO.waterMark(file, str);
 			break;
 
-		default:
-			System.out.println("No type selected");
+		case "":
+			temp = effectsDAO.noSelection(file);
 			break;
 		}
 

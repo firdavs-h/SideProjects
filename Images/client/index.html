@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Effects</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Apply Effects to Image</h1>
+    <div id="images">
+        <img src="../img/monalisa.jpg" alt="monalisa">
+        <img src="../img/grayscale.jpg" alt="grayscale">
+        <img src="../img/sepia.jpg" alt="sepia">
+        <img src="../img/negative.jpg" alt="negative">
+        <img src="../img/watermark.jpg" alt="watermark">
+
+    </div>
+
+    <form id="frm">
+        <input id="file" type="file" name="file">
+        <section id="radios">
+            <div>
+                <input id="grayscale" type="radio" name="effect-type" value="grayscale">
+                <label id="grayscale" for="">Grayscale</label>
+            </div>
+            <div>
+                <input id="sepia" type="radio" name="effect-type" value="sepia">
+                <label id="sepia" for="">Sepia</label>
+            </div>
+            <div>
+                <input id="negative" type="radio" name="effect-type" value="negative">
+                <label id="negative" for="">Negative</label>
+            </div>
+            <div>
+                <input id="water" type="radio" name="effect-type" value="water">
+                <label id="water" for="">Watermark</label>
+            </div>
+        </section>
+
+        <div id="wminput" class="wminput hide">
+            <input id="watermark" type="text" name="watermark" placeholder="watermark text">
+        </div>
+        <button id="submit" type="submit">Apply Effect</button>
+
+
+    </form>
+    <div id="response"></div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
