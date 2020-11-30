@@ -22,7 +22,7 @@
     </div>
 
     <form id="frm">
-        <input id="file" type="file" name="file">
+        <input id="file" type="file" required name="file">
         <section id="radios">
             <div>
                 <input id="grayscale" type="radio" name="effect-type" value="grayscale">
@@ -45,11 +45,17 @@
         <div id="wminput" class="wminput hide">
             <input id="watermark" type="text" name="watermark" placeholder="watermark text">
         </div>
-        <button id="submit" type="submit">Apply Effect</button>
+        <input id="submit" type="submit" value="Apply Effect">
 
 
     </form>
-    <div id="response"></div>
+    <div id="response">
+        <div>
+            <a id="save" href="" download></a>
+        </div>
+        <img id="img1" src="" alt="">
+
+    </div>
     <script src="script.js"></script>
 
 </body>

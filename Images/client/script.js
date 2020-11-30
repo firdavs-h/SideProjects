@@ -3,10 +3,10 @@
 const waterInput = document.getElementById('wminput');
 function showInput() {
     waterInput.classList.remove('hide');
-}
+};
 function hideInput() {
     waterInput.classList.add('hide');
-}
+};
 
 
 function upload() {
@@ -27,21 +27,37 @@ function upload() {
         method: 'POST',
         body: formData
     };
-    fetch('http://localhost:8080/upload', requestOptions)
-        .then((response) => {
-            addResponse(response.blob());
-        })
-        .catch((error) => {
+    fetch('http://localhost:8080/upload', requestOptions).then((response) => response).then((response) => {
+        addResponse(response);
+        return;
+    });
 
-        });
-}
-function addResponse(resBlob) {
-    const response = document.getElementById('response');
+};
+
+function addResponse(resp) {
+    const imgR = document.getElementById('img1');
+    const saveLink = document.getElementById('save');
     let image = document.createElement('img')
-    let objectURL = URL.createObjectURL(resBlob);
-    image.src = objectURL;
-    response.appendChild(image);
-}
+    resp.arrayBuffer().then((buffer) => {
+        let base64Flag = 'data:image/jpeg;base64,';
+        let imageStr = arrayBufferToBase64(buffer);
+
+        const link = base64Flag + imageStr;
+        imgR.src = link;
+        saveLink.href = link;
+        saveLink.innerText = "Save Image";
+
+    });
+
+
+};
+function arrayBufferToBase64(buffer) {
+    let binary = '';
+    let bytes = [].slice.call(new Uint8Array(buffer));
+    bytes.forEach((b) => binary += String.fromCharCode(b));
+
+    return window.btoa(binary);
+};
 
 //event handlers
 

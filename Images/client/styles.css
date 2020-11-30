@@ -26,7 +26,7 @@ body h1{
 }
 #frm{
 
-    margin-top: 20px;
+    margin: 20px;
    
 }
 #radios{
@@ -57,4 +57,18 @@ body h1{
 }
 .hide{
     display: none;
+}
+#save{
+    margin: 20px;
+    color: snow;
+    text-decoration: none;
+    font-size: medium;
+    
+}
+#save:hover{
+    color: dodgerblue;
+}
+#img1{
+    margin: 20px;
+    width: 50%;
 }
