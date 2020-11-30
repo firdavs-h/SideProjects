@@ -27,17 +27,17 @@ function upload() {
         method: 'POST',
         body: formData
     };
-    fetch('http://localhost:8080/upload', requestOptions).then((response) => response).then((response) => {
-        addResponse(response);
-        return;
-    });
+    fetch('http://localhost:8080/upload', requestOptions).
+        then((response) => response).then((response) => {
+            addResponse(response);
 
+        });
 };
 
 function addResponse(resp) {
     const imgR = document.getElementById('img1');
     const saveLink = document.getElementById('save');
-    let image = document.createElement('img')
+
     resp.arrayBuffer().then((buffer) => {
         let base64Flag = 'data:image/jpeg;base64,';
         let imageStr = arrayBufferToBase64(buffer);
