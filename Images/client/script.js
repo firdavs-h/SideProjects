@@ -60,23 +60,24 @@ function arrayBufferToBase64(buffer) {
 };
 
 //event handlers
+document.addEventListener("DOMContentLoaded", () => {
+    const water = document.getElementById('water');
+    water.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        showInput();
+    });
 
-const water = document.getElementById('water');
-water.addEventListener('click', (ev) => {
-    ev.stopPropagation();
-    showInput();
+    const radios = document.getElementById('radios');
+    radios.addEventListener('click', () => {
+        hideInput();
+    });
+
+    const sbmt = document.getElementById('submit');
+    sbmt.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        upload();
+    });
+
 });
-
-const radios = document.getElementById('radios');
-radios.addEventListener('click', () => {
-    hideInput();
-});
-
-const sbmt = document.getElementById('submit');
-sbmt.addEventListener('click', (ev) => {
-    ev.preventDefault();
-    upload();
-});
-
 
 
