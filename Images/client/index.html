@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+
 </head>
 
 <body>
@@ -23,23 +23,24 @@
     </div>
 
     <form id="frm">
+        <p>jpg only</p>
         <input id="file" type="file" required name="file">
         <section id="radios">
             <div>
                 <input id="grayscale" type="radio" name="effect-type" value="grayscale">
-                <label id="grayscale" for="">Grayscale</label>
+                <label for="grayscale">Grayscale</label>
             </div>
             <div>
                 <input id="sepia" type="radio" name="effect-type" value="sepia">
-                <label id="sepia" for="">Sepia</label>
+                <label for="sepia">Sepia</label>
             </div>
             <div>
                 <input id="negative" type="radio" name="effect-type" value="negative">
-                <label id="negative" for="">Negative</label>
+                <label for="negative">Negative</label>
             </div>
             <div>
                 <input id="water" type="radio" name="effect-type" value="water">
-                <label id="water" for="">Watermark</label>
+                <label for="water">Watermark</label>
             </div>
         </section>
 
@@ -58,7 +59,7 @@
 
     </div>
 
-
+    <script src="script.js"></script>
 </body>
 
 </html>

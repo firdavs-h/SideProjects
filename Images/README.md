@@ -1,6 +1,7 @@
 # Image Effects 
 
-Apply effects to uploaded image.\
+Apply effects to uploaded image. 
+[Deployed link](https://image-client.herokuapp.com/)
 ### Running Instructions
 * Server Side
   * Navigate to the root of the project 
