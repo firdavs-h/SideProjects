@@ -12,7 +12,7 @@ ______________________________________________________
 
 
 ## Variable Rate Interest Calculator
- [Calculator monthly interest amount based in LIBOR benchmark](https://github.com/firdavs-h/SideProjects/tree/master/variableRateCalculator)
+ [Calculate monthly interest amount based in LIBOR benchmark](https://github.com/firdavs-h/SideProjects/tree/master/variableRateCalculator)
 
 ______________________________________________________
 
